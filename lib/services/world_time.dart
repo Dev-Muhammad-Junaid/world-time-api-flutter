@@ -8,11 +8,9 @@ class WorldTime {
   String? flag; //url for the flag of the location
   String? url; //location url for api endpoint
 
-  WorldTime({this.flag,this.location,this.url})
-  {
+  WorldTime({this.flag, this.location, this.url});
 
-
-  void getData() async {
+  Future<void > getTime() async {
     Uri myapi = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
     Response response = await get(myapi);
     Map data = jsonDecode(response.body);
@@ -20,7 +18,7 @@ class WorldTime {
     //get properties from data
     String datetime = data['datetime'];
     String offset = data['utc_offset'];
-    offset= offset.substring(1,3);
+    offset = offset.substring(1, 3);
 
     //create Datetime object
     DateTime now = DateTime.parse(datetime);
@@ -29,6 +27,6 @@ class WorldTime {
     //setting the time variable property here
     time = now.toString();
   }
-  WorldTime obj = WorldTime(flag: "pakistam.png",location: "Karachi",url: "dnee");
-}
 
+
+}
