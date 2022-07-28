@@ -8,13 +8,13 @@ class WorldTime {
   String? time; //the time in that location
   String? flag; //url for the flag of the location
   String? url; //location url for api endpoint
+  bool? isDaytime; //true or false if daytime or not
 
   WorldTime({this.flag, this.location, this.url});
 
   Future<void > getTime() async {
 
     try{
-
 
     Uri myapi = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
     Response response = await get(myapi);
@@ -30,6 +30,7 @@ class WorldTime {
     now = now.add(Duration(hours: int.parse(offset)));
 
     //setting the time variable property here
+    isDaytime =  now.hour > 6 && now.hour < 20;
     time = DateFormat.jm().format(now);
 
     }

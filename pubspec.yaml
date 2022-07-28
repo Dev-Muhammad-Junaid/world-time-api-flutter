@@ -61,6 +61,16 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - lib/assets/dayty.jpg
+    - lib/assets/egypt.png
+    - lib/assets/germany.png
+    - lib/assets/greece.png
+    - lib/assets/indonesia.png
+    - lib/assets/kenya.png
+    - lib/assets/nighty.jpg
+    - lib/assets/pakistan.png
+    - lib/assets/south_korea.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

@@ -21,6 +21,7 @@ class _LoadingState extends State<Loading> {
       'location':obj.location,
       'flag':obj.flag,
       'time':obj.time,
+      'isDaytime' : obj.isDaytime,
     }
     );
   }
@@ -34,7 +35,7 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.blue.shade700,
       body: Center(
         child: SpinKitFadingCircle(color: Colors.white,size: 50.0,duration: Duration(milliseconds: 1000),),
       )
